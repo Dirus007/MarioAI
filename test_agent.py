@@ -1,11 +1,11 @@
 import os
 import argparse
-from agents.ppo_agent import PPOAgent
-from env.mario_env import create_mario_env
+from ppo_agent import PPOAgent
+from mario_env import create_mario_env
 
 
 def get_project_root() -> str:
-    return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    return os.path.dirname(os.path.abspath(__file__))
 
 
 def test_agent(model_path):
@@ -27,6 +27,6 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    model_full_path = os.path.join(project_root, args.model_path)
+    model_full_path = args.model_path
 
     test_agent(model_full_path)

@@ -1,13 +1,15 @@
+# Responsible for training the AI
+
 import os
 import argparse
 from stable_baselines3 import PPO
 from stable_baselines3.common.callbacks import BaseCallback
-from env.mario_env import create_mario_env
-from training.TrainAndLoggingCallback import TrainAndLoggingCallback
+from mario_env import create_mario_env
+from TrainAndLoggingCallback import TrainAndLoggingCallback
 
 
 def get_project_root() -> str:
-    return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    return os.path.dirname(os.path.abspath(__file__))
 
 
 class LearningRateScheduler(BaseCallback):
